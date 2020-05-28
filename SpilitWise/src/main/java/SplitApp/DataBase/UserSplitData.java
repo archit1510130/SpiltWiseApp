@@ -1,9 +1,6 @@
 package SplitApp.DataBase;
 
-
-
-public class BalanceSheetDb {
-
-
+public class UserSplitData {
+    
     
 }
