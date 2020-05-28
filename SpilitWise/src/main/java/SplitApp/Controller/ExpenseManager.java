@@ -74,6 +74,20 @@ public class ExpenseManager {
         }
     }
 
+    public void showBalance(String userId) {
+        boolean isEmpty = true;
+        for (Map.Entry<String, Double> userBalance : balanceSheetDb.getBalanceSheet().get(userId).entrySet()) {
+            if (userBalance.getValue() != 0) {
+                isEmpty = false;
+                printBalance(userId, userBalance.getKey(), userBalance.getValue());
+            }
+        }
+
+        if (isEmpty) {
+            System.out.println("No balances");
+        }
+    }
+
 
 	public User getUser(String key) {
         return userData.getUser(key);

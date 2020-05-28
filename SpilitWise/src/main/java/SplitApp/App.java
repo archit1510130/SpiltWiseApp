@@ -35,7 +35,7 @@ public class App
                 if (commands.length == 1) {
                     expenseManager.showBalances();
                 } else {
-                    //expenseManager.showBalance(commands[1]);
+                    expenseManager.showBalance(commands[1]);
                  }
                 break;
 
@@ -48,7 +48,7 @@ public class App
                 switch(expenseType){
                     case "EQUAL":
                     for (int i = 0; i < noOfUsers; i++) {
-                        splits.add(new Split(expenseManager.getUser(commands[4 + i]),amount/(noOfUsers+1)));
+                        splits.add(new Split(expenseManager.getUser(commands[4 + i]),amount/(noOfUsers)));
                     }
     
                     expenseManager.handelExpense(paidBy, amount, splits, expenseType);
@@ -59,9 +59,14 @@ public class App
                     }
                     expenseManager.handelExpense(paidBy, amount, splits, expenseType);
                     break;
-                   
-                    
+                    case "PERCENT":
+                    for (int i = 0; i < noOfUsers; i++) {
+                        splits.add(new Split(expenseManager.getUser(commands[4 + i]),(Double.parseDouble(commands[5+i+noOfUsers])*amount)/100) );
+                    }
+                    expenseManager.handelExpense(paidBy, amount, splits, expenseType);
+                    break;
 
+                
                 }
 
 
