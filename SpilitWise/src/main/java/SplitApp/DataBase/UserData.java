@@ -15,6 +15,7 @@ public class UserData {
     public void  addUser(User u)
     {
         System.out.println("ADDING USER");
+        System.out.println(u.getId());
         userMap.put(u.getId(),u);
     }
 

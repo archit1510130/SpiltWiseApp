@@ -15,11 +15,6 @@ public class Split {
 
     private User User;
     double amount;
-    public Split(User user)
-    {
-        this.User=user;
-    }
-    
 
 
     
